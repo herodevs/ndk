@@ -19,6 +19,7 @@
     "package.json"
   ],
   "dependencies": {
+    "@apollo/client": "^3.9.5",
     "@oclif/core": "^2",
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^3.2.0",
@@ -54,6 +55,9 @@
     ],
     "topicSeparator": " ",
     "topics": {
+      "nes": {
+        "description": "NeverEndingSupport commands (commands: init)"
+      },
       "report": {
         "description": "Run reports for the current project (commands: committers)"
       },
