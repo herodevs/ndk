@@ -1,0 +1,9 @@
+{
+  "recursive": true,
+  "reporter": "spec",
+  "loader": "ts-node/esm",
+  "require": [ "test/helpers/init.js", "ts-node/register" ],
+  "timeout": 60000,
+  "watch-extensions": [ "ts" ],
+  "watch-files": [ "src", "test", "src/**/*.ts", "test/**/*.ts" ]
+}

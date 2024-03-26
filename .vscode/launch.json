@@ -1,18 +1,49 @@
 {
   "version": "0.2.0",
   "configurations": [
-      {
-          "type": "node",
-          "request": "launch",
-          "name": "Execute Command",
-          "skipFiles": [
-              "<node_internals>/**"
-          ],
-          "program": "${workspaceFolder}/bin/dev",
-          "args": [
-            "hello",
-            "world",
-          ],
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Execute Command",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/bin/dev",
+      "args": [
+        "hello",
+        "world",
+      ],
+    },
+    {
+      "name": "Mocha current file",
+      "request": "launch",
+      "type": "node",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/mocha",
+      "args": [
+        // "${fileBasenameNoExtension}",
+        "-r",
+        "ts-node/register",
+        "--file",
+        "test/helpers/init.js",
+        "--no-timeout",
+        "--watch-files",
+        "./test/**/*.ts",
+        "--watch-files",
+        "./src/**/*.ts",
+        // "-R",
+        // "min",
+        "--watch-extensions",
+        "ts",
+        "--watch",
+        "${relativeFile}"
+      ],
+      "cwd": "${workspaceRoot}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "sourceMaps": true,
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha"
       }
+    }
   ]
 }
